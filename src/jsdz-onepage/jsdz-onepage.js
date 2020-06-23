@@ -1,4 +1,8 @@
-document.addEventListener( 'DOMContentLoaded', function() {
+( function() {
+	if( window.jsdz === undefined ) {
+		throw new Error( '\njsdz no se ha defectado.\nPara masinformacion visita: https://github.com/SergioAlarconFelipe/jsdz' );
+	}
+
 	window.jsdz.pageUpdate = function() {
 		document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
 			if( page.show === undefined ) {
@@ -23,7 +27,9 @@ document.addEventListener( 'DOMContentLoaded', function() {
 			link.addEventListener( 'click', pageLinkClick );
 		} );
 	}
-	
-	window.jsdz.pageLinkUpdate();
-	window.jsdz.pageUpdate();
-} );
+
+	document.addEventListener( 'DOMContentLoaded', function() {
+		window.jsdz.pageLinkUpdate();
+		window.jsdz.pageUpdate();
+	} );
+} )();
