@@ -1,1 +1,28 @@
+body {
+	margin: 0px;
+	min-height: 100vh;
+}
 
+div[ data-role = "page" ] {
+	max-height: 0;
+	overflow: hidden;
+}
+div[ data-role = "page" ].active {
+	max-height: 500px;
+	height: auto;
+}
+div[ data-role = "page" ].fade-effect {
+	-webkit-transition: max-height 0.8s ease-in-out;
+	-moz-transition: max-height 0.8s ease-in-out;
+	transition: max-height 0.8s ease-in-out;
+}
+span[ data-role = "pageLink" ] {
+	color: #007bff;
+	text-decoration: none;
+	background-color: transparent;
+}
+span[ data-role = "pageLink" ]:hover {
+	color: #0056b3;
+	text-decoration: underline;
+	cursor: pointer;
+}
