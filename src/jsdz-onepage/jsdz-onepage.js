@@ -7,7 +7,7 @@
 		document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
 			if( page.showOnly === undefined ) {
 				page.showOnly = function() {
-					if( !this.classList.contains( 'active' ) ) {
+					if( !this.classList.contains( 'visible' ) ) {
 						document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
 							page.classList.remove( 'visible' );
 						} );
@@ -24,7 +24,7 @@
 			
 			if( page.hide === undefined ) {
 				page.hide = function() {
-					if( !this.classList.contains( 'active' ) ) {
+					if( !this.classList.contains( 'visible' ) ) {
 						this.classList.remove( 'visible' );
 					};
 				};
