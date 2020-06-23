@@ -5,13 +5,28 @@
 
 	window.jsdz.pageUpdate = function() {
 		document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
-			if( page.show === undefined ) {
-				page.show = function() {
+			if( page.showOnly === undefined ) {
+				page.showOnly = function() {
 					if( !this.classList.contains( 'active' ) ) {
 						document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
-							page.classList.remove( 'active' );
+							page.classList.remove( 'visible' );
 						} );
-						this.classList.add( 'active' );
+						this.classList.add( 'visible' );
+					};
+				};
+			}
+			
+			if( page.show === undefined ) {
+				page.show = function() {
+						this.classList.add( 'visible' );
+					};
+				};
+			}
+			
+			if( page.hide === undefined ) {
+				page.hide = function() {
+					if( !this.classList.contains( 'active' ) ) {
+						this.classList.remove( 'visible' );
 					};
 				};
 			}
@@ -20,7 +35,7 @@
 
 	window.jsdz.pageLinkUpdate = function() {
 		function pageLinkClick() {
-			document.querySelector( this.getAttribute( 'data-target' ) ).show();
+			document.querySelector( this.getAttribute( 'data-target' ) ).showOnly();
 		}
 		document.querySelectorAll( 'span[ data-role = "pageLink" ]' ).forEach( function( link ) {
 			link.removeEventListener( 'click', pageLinkClick );
