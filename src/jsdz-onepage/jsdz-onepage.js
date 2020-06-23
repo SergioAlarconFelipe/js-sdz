@@ -18,8 +18,7 @@
 			
 			if( page.show === undefined ) {
 				page.show = function() {
-						this.classList.add( 'visible' );
-					};
+					this.classList.add( 'visible' );
 				};
 			}
 			
