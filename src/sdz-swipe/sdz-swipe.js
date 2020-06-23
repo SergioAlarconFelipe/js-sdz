@@ -72,3 +72,10 @@ document.addEventListener( 'DOMContentLoaded', function() {
 		}
 	} )( document );
 } );
+
+// Example
+/*
+document.getElementById( 'panel-1' ).addEventListener( 'swiperight', function( event ) {
+	console.log( 1, event );
+} );
+*/
