@@ -1,0 +1,53 @@
+div[ data-role = "menu" ] {
+	background-color: aliceblue;
+
+	width: 17rem;
+	max-width: 80%;
+	position: fixed;
+	top: 0;
+	/* background-color: rgba( 255, 255, 255, 1 ); */
+	height: 100vh;
+	-webkit-box-shadow: 0px 0px 10px 2px #000000;
+	box-shadow: 0px 0px 10px 2px #000000;
+	overflow: auto;
+}
+div[ data-role = "menu" ]:not( [ data-position ] ),
+div[ data-role = "menu" ][ data-position = "left" ] {
+	left: -18rem;
+}
+div[ data-role = "menu" ][ data-position = "right" ] {
+	left: calc( 100% + 1rem );
+}
+div[ data-role = "menu" ]:not( [ data-position ] ).visible,
+div[ data-role = "menu"][ data-position = "left" ].visible {
+	left: 0rem;
+}
+div[ data-role = "menu" ][ data-position = "right" ].visible {
+	left: max( 20%, calc( 100% - 17rem ) );
+}
+div[ data-role = "menuBackground" ] {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	height: 100%;
+	width: 100%;
+}
+div[ data-role = "menuBackground" ].visible {
+	display: block;
+}
+div[ data-role = "menu" ].fade-effect {
+	-webkit-transition: left 0.8s ease-in-out;
+	-moz-transition: left 0.8s ease-in-out;
+	transition: left 0.8s ease-in-out;
+}
+span[ data-role = "menuLink" ] {
+	color: #007bff;
+	text-decoration: none;
+	background-color: transparent;
+}
+span[ data-role = "menuLink" ]:hover {
+	color: #0056b3;
+	text-decoration: underline;
+	cursor: pointer;
+}
