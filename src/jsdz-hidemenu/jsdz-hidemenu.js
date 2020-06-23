@@ -7,29 +7,33 @@
 		document.querySelectorAll( 'div[ data-role = "menu" ]' ).forEach( function( menu ) {
 			if( menu.show === undefined ) {
 				menu.show = function() {
+					this.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
 					this.classList.add( 'visible' );
 					document.querySelectorAll( 'div[ data-link = "#' + this.id + '" ]' ).forEach( function( background ) {
 						background.classList.add( 'visible' );
 					} );
+					this.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
 				};
 			}
 
 			if( menu.hide === undefined ) {
 				menu.hide = function() {
+					this.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
 					this.classList.remove( 'visible' );
 					document.querySelectorAll( 'div[ data-link = "#' + this.id + '" ]' ).forEach( function( background ) {
 						background.classList.remove( 'visible' );
 					} );
+					this.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
 				};
 			}
 
 			if( menu.toggle === undefined ) {
 				menu.toggle = function() {
 					if( !this.classList.contains( 'visible' ) ) {
-						this.classList.add( 'visible' );
+						this.show();
 					}
 					else {
-						this.classList.remove( 'visible' );
+						this.hide();
 					}
 				};
 			}
@@ -47,7 +51,7 @@
 			link.removeEventListener( 'click', pageLinkClick );
 			link.addEventListener( 'click', pageLinkClick );
 		} );
-	}
+	};
 
 	document.addEventListener( 'DOMContentLoaded', function() {
 		document.querySelectorAll( 'div[ data-role = "menu" ]' ).forEach( function( menu ) {
