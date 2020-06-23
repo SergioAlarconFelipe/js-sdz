@@ -1,8 +1,3 @@
-body {
-	margin: 0px;
-	min-height: 100vh;
-}
-
 div[ data-role = "page" ] {
 	max-height: 0;
 	overflow: hidden;
