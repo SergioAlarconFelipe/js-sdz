@@ -5,6 +5,22 @@
 
 	window.jsdz.menuUpdate = function() {
 		document.querySelectorAll( 'div[ data-role = "menu" ]' ).forEach( function( menu ) {
+            if( document.querySelector( '[ data-role = "menuBackground" ][ data-link = "#' + menu.id + '" ]' ) === null ) {
+                var fondo = document.createElement( 'div' );
+                fondo.setAttribute( 'data-role', 'menuBackground' );
+                fondo.setAttribute( 'data-link', '#' + menu.id );
+
+                menu.parentElement.insertBefore( fondo, menu.parentElement.firstChild );
+
+                document.querySelectorAll( 'div[ data-role = "menuBackground" ]' ).forEach( function( background ) {
+                    background.addEventListener( 'click', function() {
+                        document.querySelectorAll( this.getAttribute( 'data-link' ) ).forEach( function( menu ) {
+                            menu.hide();
+                        } );
+                    } );
+                } );
+            }
+            
 			if( menu.show === undefined ) {
 				menu.show = function() {
 					this.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
@@ -55,22 +71,7 @@
 	};
 
 	document.addEventListener( 'DOMContentLoaded', function() {
-		document.querySelectorAll( 'div[ data-role = "menu" ]' ).forEach( function( menu ) {
-			var fondo = document.createElement("div");
-			fondo.setAttribute( 'data-role', 'menuBackground' );
-			fondo.setAttribute( 'data-link', '#' + menu.id );
-
-			menu.parentElement.insertBefore( fondo, menu.parentElement.firstChild );
-
-			document.querySelectorAll( 'div[ data-role = "menuBackground" ]' ).forEach( function( background ) {
-				background.addEventListener( 'click', function() {
-					document.querySelectorAll( this.getAttribute( 'data-link' ) ).forEach( function( menu ) {
-						menu.hide();
-					} );
-				} );
-			} );
-		} );
-
+		window.jsdz.menuUpdate();
 		window.jsdz.menuLinkUpdate();
 	} );
 } )();
