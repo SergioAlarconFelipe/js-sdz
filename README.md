@@ -136,4 +136,4 @@ Estos menus irán intercambiándose la clase **visible** para visualizarse u ocu
 
 Opcionalmente, podemos añadir el attributo **data-position=** con los valores **left** o **right** si queremos seleccionar el lateral de la pantalla por el que se escondera el menu.
 
-> No indicar la posicion funcionara igual que indicar la posicion left.
+> No indicar la posicion funcionara igual que indicar la posicion "left".
