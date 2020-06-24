@@ -24,7 +24,7 @@ El resto de paquetes son opcionales y se pueden incluir los que se necesiten, de
 
 ## Paquetes
 ### JSDZ - Swipe
-Para cada elemento del arbol DOM podemos gestionar los eventos "swiperight" y "swipeleft" que se lanzan cuando el ususuario presiona hacia abajo y desliza en la dirección correspondiente (un minimo de 100 px horizontalmente).
+Con este paquete, podemos gestionar los eventos "swiperight" y "swipeleft" que se lanzan cuando el ususuario presiona hacia abajo y desliza en la dirección correspondiente (un minimo de 100px horizontalmente) sobre los elementos del arbol DOM que nos interesen.
 
 Este paquete esta preparado para funcionar tanto en los dispositivos con puntero como en los dispositivos moviles.
 
@@ -39,3 +39,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	} );
 } );
 ```
+
+### JSDZ - OnePage
+
+### JSDZ - Hide Menu
