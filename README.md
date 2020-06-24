@@ -51,21 +51,21 @@ Opcionalmente, podemos añadir la clase *fade-effect* si queremos activar una an
 
 ```html
 <div id="page-1" data-role="page" class="fade-effect visible">
-    <p>
+	<p>
 		<span data-role="pageLink" data-target="#page-1">Page 1</span>
 		<span data-role="pageLink" data-target="#page-2">Page 2</span>
-    </p>
+	</p>
 	
-    <p>Page 1</p>
+	<p>Page 1</p>
 </div>
 
 <div id="page-2" data-role="page" class="fade-effect visible">
-    <p>
+	<p>
 		<span data-role="pageLink" data-target="#page-1">Page 1</span>
 		<span data-role="pageLink" data-target="#page-2">Page 2</span>
-    </p>
+	</p>
 	
-    <p>Page 2</p>
+	<p>Page 2</p>
 </div>
 ```
 Automaticamente las etiquetas *span* que posean el atributo *data-role="pageLink"* se vincularan para mostrar las páginas indicadas con su atributo *data-target*.
@@ -104,6 +104,7 @@ beforeHide|Antes de que cualquier página visible se oculte
 afterHide|Despues de que cualquier página visible se oculte
 
 ```javascript
+document.addEventListener( 'DOMContentLoaded', function() {
 	document.getElementById( 'page-1' ).addEventListener( 'beforeHide', function( event ) { 
 		console.log( 1, event ); } 
 	);
@@ -116,6 +117,7 @@ afterHide|Despues de que cualquier página visible se oculte
 	document.getElementById( 'page-3' ).addEventListener( 'afterHide', function( event ) { 
 		console.log( 4, event ); } 
 	);
+} );
 ```
 
 ### JSDZ - Hide Menu
