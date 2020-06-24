@@ -68,7 +68,14 @@ Opcionalmente, podemos añadir la clase **fade-effect** si queremos activar una 
 	<p>Page 2</p>
 </div>
 ```
+
+> Si se generan páginas de forma dinamica, se debe ejecutar el siguiente comando despues de añadirlos al arbol DOM.  
+> window.jsdz.pageUpdate();
+
 Automaticamente las etiquetas **span** que posean el atributo **data-role="pageLink"** se vincularan para mostrar las páginas indicadas con su atributo **data-target**.
+
+> Si segeneran *span links* a alas páginas de forma dinamica, se debe ejecutar el siguiente comando despues de añadirlos al arbol DOM.  
+> window.jsdz.pageLinkUpdate();
 
 Cada página posee los siguientes metodos:
 
