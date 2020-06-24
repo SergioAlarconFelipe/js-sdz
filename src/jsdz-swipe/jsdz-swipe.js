@@ -60,28 +60,12 @@
 			if( event.x >= touchX + pxSensibility ) {
 				touching = false;
 				direction = 'none';
-
-				cE = new CustomEvent(
-					'swiperight', 
-					{
-						bubbles: true,
-						cancelable: true
-					}
-				);
-				event.srcElement.dispatchEvent( cE );
+				event.srcElement.dispatchEvent( window.jsdz.customEvent( 'swiperight' ) );
 			}
 			else if( event.x <= touchX - pxSensibility ) {
 				touching = false;
 				direction = 'none';
-
-				cE = new CustomEvent(
-					'swipeleft', 
-					{
-						bubbles: true,
-						cancelable: true
-					}
-				);
-				event.srcElement.dispatchEvent( cE );
+				event.srcElement.dispatchEvent( window.jsdz.customEvent( 'swipeleft' ) );
 			}
 		}
 	}
