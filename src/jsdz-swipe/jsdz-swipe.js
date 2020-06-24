@@ -85,13 +85,4 @@
 			}
 		}
 	}
-	} )( document );
-
-	// Example
-	/*
-	document.addEventListener( 'DOMContentLoaded', function() {
-	document.getElementById( 'panel-1' ).addEventListener( 'swiperight', function( event ) {
-		console.log( 1, event );
-	} );
-	} );
-	*/
+} )( document );
