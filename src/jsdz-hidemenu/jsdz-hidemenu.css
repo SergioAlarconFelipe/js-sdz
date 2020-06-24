@@ -27,7 +27,7 @@ div[ data-role = "menu" ][ data-position = "right" ].visible {
 }
 div[ data-role = "menuBackground" ] {
 	display: none;
-	position: absolute;
+	position: fixed;
 	top: 0px;
 	left: 0px;
 	height: 100%;
