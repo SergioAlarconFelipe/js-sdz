@@ -85,7 +85,7 @@ show|Muestra la sección indicada
 hide|Oculta la sección indicada
 showOnly|Muestra la sección indicada y oculta el resto que puedieran estar visibles
 
-Seria fácil usar los eventos del paquete *swipe* explicados anteriormente para controlar la visualizacion de las distintas páginas.
+Seria fácil usar los eventos del paquete **swipe** explicados anteriormente para controlar la visualizacion de las distintas páginas.
 
 ```javascript
 document.addEventListener( 'DOMContentLoaded', function() {
@@ -109,6 +109,8 @@ Callback|Explicación
 --------|-----------
 beforeHide|Antes de que cualquier página visible se oculte
 afterHide|Despues de que cualquier página visible se oculte
+beforeShow|Antes de que cualquier página no visible se visualice
+afterShow|Despues de que cualquier página no visible se visualice
 
 ```javascript
 document.addEventListener( 'DOMContentLoaded', function() {
@@ -121,7 +123,7 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	document.getElementById( 'page-2' ).addEventListener( 'beforeHide', function( event ) { 
 		console.log( 3, event ); } 
 	);
-	document.getElementById( 'page-3' ).addEventListener( 'afterHide', function( event ) { 
+	document.getElementById( 'page-2' ).addEventListener( 'afterHide', function( event ) { 
 		console.log( 4, event ); } 
 	);
 } );
@@ -153,3 +155,51 @@ Automáticamente las etiquetas **span** que posean el atributo **data-role="menu
 
 > Si se generan *span links* a a los menus de forma dinámica mediante programación, se debe ejecutar el siguiente comando después de añadirlos al árbol DOM.\
 > window.jsdz.menuLinkUpdate();
+
+Cada menú posee los siguientes métodos:
+
+Método|Explicación
+------|-----------
+show|Muestra el menú indicado
+hide|Oculta el menú indicado
+toggle|Muestra el menú indicado si estaba oculto o lo oculta si estaba visible
+
+Seria fácil usar los eventos del paquete **swipe** explicados anteriormente para controlar la visualizacion de los distintos menus.
+
+```javascript
+document.addEventListener( 'DOMContentLoaded', function() {
+	document.addEventListener( 'swipeleft', function( event ) {
+		document.getElementById( 'menu-1' ).show();
+	} );
+
+	document.addEventListener( 'swiperight', function( event ) {
+		document.getElementById( 'menu-1' ).hide();
+	} );
+} );
+```
+
+Cada menu ejecuta los siguientes callbacks cuando se muestran o se ocultan.
+
+Callback|Explicación
+--------|-----------
+beforeHide|Antes de que el menu indicado se oculte
+afterHide|Despues de que el menu indicado se oculte
+beforeShow|Antes de que el menu indicado se visualice
+afterShow|Despues de que el menu indicado se visualice
+
+```javascript
+document.addEventListener( 'DOMContentLoaded', function() {
+	document.getElementById( 'menu-1' ).addEventListener( 'beforeHide', function( event ) { 
+		console.log( 1, event ); } 
+	);
+	document.getElementById( 'menu-1' ).addEventListener( 'afterHide', function( event ) { 
+		console.log( 2, event ); } 
+	);
+	document.getElementById( 'menu-1' ).addEventListener( 'beforeShow', function( event ) { 
+		console.log( 3, event ); } 
+	);
+	document.getElementById( 'menu-1' ).addEventListener( 'afterShow', function( event ) { 
+		console.log( 4, event ); } 
+	);
+} );
+```
