@@ -1,7 +1,7 @@
 # JSDZ
 JavaScript Framework
 
-1. [Instalación](#instalacion)
+1. [Instalación](#instalación)
 2. [JSDZ - Swipe](#jsdz---swipe)
 2. [JSDZ - One Page](#jsdz---one-page)
 2. [JSDZ - Hide Menu](#jsdz---hide-menu)
@@ -46,6 +46,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	} );
 } );
 ```
+
+[Ir arriba](#jsdz)
 
 ### JSDZ - One Page
 Con este paquete, podemos gestionar una aplicación "one page" en la que las distintas secciones se irán ocultando o mostrando cuando necesitemos.
@@ -136,6 +138,8 @@ document.addEventListener( 'DOMContentLoaded', function() {
 } );
 ```
 
+[Ir arriba](#jsdz)
+
 ### JSDZ - Hide Menu
 Con este paquete, podemos gestionar menús laterales que se muestran o se esconden a nuestro gusto, principalmente diseñados para dispositivos móviles.
 
@@ -210,3 +214,5 @@ document.addEventListener( 'DOMContentLoaded', function() {
 	);
 } );
 ```
+
+[Ir arriba](#jsdz)
