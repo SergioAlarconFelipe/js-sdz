@@ -45,18 +45,18 @@
 			}
 		} );
 	};
+	
+	function pageLinkClick() {
+		var targets = document.querySelectorAll( this.getAttribute( 'data-target' ) ) || [];
+
+		targets.forEach( function( target ) {
+			if( target.getAttribute( 'data-role' ) === 'page' ) {
+				target.showOnly();
+			}
+		} );
+	}
 
 	window.jsdz.pageLinkUpdate = function() {
-		function pageLinkClick() {
-			var targets = document.querySelectorAll( this.getAttribute( 'data-target' ) ) || [];
-
-			targets.forEach( function( target ) {
-				if( target.getAttribute( 'data-role' ) === 'page' ) {
-					target.showOnly();
-				}
-			} );
-		}
-
 		document.querySelectorAll( 'span[ data-role = "pageLink" ]' ).forEach( function( link ) {
 			link.removeEventListener( 'click', pageLinkClick );
 			link.addEventListener( 'click', pageLinkClick );
