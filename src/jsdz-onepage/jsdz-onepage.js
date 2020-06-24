@@ -2,7 +2,7 @@
 	if( window.jsdz === undefined ) {
 		throw new Error( '\njsdz no se ha defectado.\nPara masinformacion visita: https://github.com/SergioAlarconFelipe/jsdz' );
 	}
-
+    
 	window.jsdz.pageUpdate = function() {
 		document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
 			if( page.showOnly === undefined ) {
@@ -45,7 +45,7 @@
 			}
 		} );
 	};
-	
+    
 	function pageLinkClick() {
 		var targets = document.querySelectorAll( this.getAttribute( 'data-target' ) ) || [];
 
@@ -64,7 +64,7 @@
 	};
 
 	document.addEventListener( 'DOMContentLoaded', function() {
-		window.jsdz.pageLinkUpdate();
 		window.jsdz.pageUpdate();
+		window.jsdz.pageLinkUpdate();
 	} );
 } )();
