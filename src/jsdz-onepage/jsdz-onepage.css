@@ -5,6 +5,7 @@ div[ data-role = "page" ] {
 div[ data-role = "page" ].visible {
 	max-height: 500px;
 	height: auto;
+	min-height: 100vh;
 }
 div[ data-role = "page" ].fade-effect {
 	-webkit-transition: max-height 0.8s ease-in-out;
