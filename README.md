@@ -147,7 +147,7 @@ Sera necesario crear los distintos menús como un div con un atributo **data-rol
 
 Estos menús irán intercambiándose la clase **visible** para visualizarse u ocultarse.
 
-Opcionalmente, podemos añadir el attributo **data-position=** con los valores **left** o **right** si queremos seleccionar el lateral de la pantalla por el que se esconderá el menú.
+Opcionalmente, podemos añadir el attributo **data-position** con los valores **left** o **right** si queremos seleccionar el lateral de la pantalla por el que se esconderá el menú.
 
 Opcionalmente, podemos añadir la clase **fade-effect** si queremos activar una animación de deslizamiento al visualizar u ocultar el menú.
 
