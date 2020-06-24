@@ -40,12 +40,12 @@
 		} );
 	};
     
-    function menuLinkClick() {
-        var target = document.getElementById( this.getAttribute( 'data-target' ) ) || null;
-        if( target && target.getAttribute( 'data-role' ) === 'menu' ) {
-            target.show();
-        }
-    }
+	function menuLinkClick() {
+		var target = document.getElementById( this.getAttribute( 'data-target' ) ) || null;
+		if( target && target.getAttribute( 'data-role' ) === 'menu' ) {
+			target.show();
+		}
+	}
 
 	window.jsdz.menuLinkUpdate = function() {
 		document.querySelectorAll( 'span[ data-role = "menuLink" ]' ).forEach( function( link ) {
