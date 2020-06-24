@@ -74,7 +74,7 @@ Opcionalmente, podemos añadir la clase **fade-effect** si queremos activar una 
 
 Automaticamente las etiquetas **span** que posean el atributo **data-role="pageLink"** se vincularan para mostrar las páginas indicadas con su atributo **data-target**.
 
-> Si segeneran *span links* a alas páginas de forma dinámica mediante programacion, se debe ejecutar el siguiente comando despues de añadirlos al árbol DOM.\
+> Si se generan *span links* a a las páginas de forma dinámica mediante programacion, se debe ejecutar el siguiente comando despues de añadirlos al árbol DOM.\
 > window.jsdz.pageLinkUpdate();
 
 Cada página posee los siguientes metodos:
@@ -130,10 +130,26 @@ document.addEventListener( 'DOMContentLoaded', function() {
 ### JSDZ - Hide Menu
 Con este paquete, podemos gestionar menús laterales que se muestran o se esconden a nuestro gusto, principalmente diseñados para dispositivos móviles.
 
-Sera necesario crear los distintos menus como un div con un atributo **data-role="menu"**.
+Sera necesario crear los distintos menús como un div con un atributo **data-role="menu"**.
 
-Estos menus irán intercambiándose la clase **visible** para visualizarse u ocultarse.
+Estos menús irán intercambiándose la clase **visible** para visualizarse u ocultarse.
 
-Opcionalmente, podemos añadir el attributo **data-position=** con los valores **left** o **right** si queremos seleccionar el lateral de la pantalla por el que se escondera el menu.
+Opcionalmente, podemos añadir el attributo **data-position=** con los valores **left** o **right** si queremos seleccionar el lateral de la pantalla por el que se esconderá el menú.
 
-> No indicar la posicion funcionara igual que indicar la posicion "left".
+Opcionalmente, podemos añadir la clase **fade-effect** si queremos activar una animación de deslizamiento al visualizar u ocultar el menú.
+
+> No indicar la posición funcionara igual que indicar la posición "left".
+
+```html
+<div id="menu-1" data-role="menu" data-position="right" class="fade-effect">
+	<p>Menu 1</p>
+</div>
+```
+
+> Si se generan menús de forma dinámica mediante programación, se debe ejecutar el siguiente comando después de añadirlos al árbol DOM.\
+> window.jsdz.menuUpdate();
+
+Automáticamente las etiquetas **span** que posean el atributo **data-role="menuLink"** se vincularan para mostrar los menús indicados con su atributo **data-target**.
+
+> Si se generan *span links* a a los menus de forma dinámica mediante programación, se debe ejecutar el siguiente comando después de añadirlos al árbol DOM.\
+> window.jsdz.menuLinkUpdate();
