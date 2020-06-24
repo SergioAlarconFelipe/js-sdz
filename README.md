@@ -27,6 +27,8 @@ En caso de que no se incluya antes del resto, se notificara una excepción en la
 
 El resto de paquetes son opcionales y se pueden incluir los que se necesiten, de forma automática se auto combinaran entre ellos.
 
+[Ir arriba](#jsdz)
+
 ## Paquetes
 ### JSDZ - Swipe
 Con este paquete, podemos gestionar los eventos **swiperight** y **swipeleft** que se ejecutan cuando el usuario presiona hacia abajo y desliza en la dirección correspondiente (un mínimo de 100px horizontalmente) sobre los nodos del árbol DOM que nos interesen.
