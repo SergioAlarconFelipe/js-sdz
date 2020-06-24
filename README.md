@@ -26,8 +26,8 @@ El resto de paquetes son opcionales y se pueden incluir los que se necesiten, de
 Para cada elemento del arbol DOM podemos gestionar los eventos "swiperight" y "swipeleft" que se lanzan cuando el ususuario presiona hacia abajo y desliza en la dirección correspondiente (un minimo de 100 px horizontalmente).
 ```javascript
 document.addEventListener( 'DOMContentLoaded', function() {
-  document.getElementById( 'app' ).addEventListener( 'swiperight', function( event ) {
-    console.log( 1, event );
+	document.getElementById( 'app' ).addEventListener( 'swiperight', function( event ) {
+		console.log( 1, event );
 	} );
 } );
 ```
