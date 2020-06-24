@@ -164,6 +164,10 @@ Opcionalmente, podemos añadir la clase **fade-effect** si queremos activar una 
 
 Automáticamente las etiquetas **span** que posean el atributo **data-role="menuLink"** se vincularan para mostrar los menús indicados con su atributo **data-target**.
 
+```html
+<span data-role="menuLink" data-target="menu-1">Menu</span>
+```
+
 > Si se generan *span links* a a los menus de forma dinámica mediante programación, se debe ejecutar el siguiente comando después de añadirlos al árbol DOM.\
 > window.jsdz.menuLinkUpdate();
 
