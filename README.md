@@ -27,7 +27,7 @@ Para cada elemento del arbol DOM podemos gestionar los eventos "swiperight" y "s
 ```javascript
 document.addEventListener( 'DOMContentLoaded', function() {
 	document.getElementById( 'app' ).addEventListener( 'swiperight', function( event ) {
-		console.log( 1, event );
+		console.log( event );
 	} );
 } );
 ```
