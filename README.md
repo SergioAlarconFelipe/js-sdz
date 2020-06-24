@@ -90,7 +90,7 @@ show|Muestra la sección indicada
 hide|Oculta la sección indicada
 showOnly|Muestra la sección indicada y oculta el resto que puedieran estar visibles
 
-Seria fácil usar los eventos del paquete **swipe** explicados anteriormente para controlar la visualizacion de las distintas páginas.
+Seria fácil usar los eventos del paquete [**swipe**](#jsdz---swipe) explicados anteriormente para controlar la visualizacion de las distintas páginas.
 
 ```javascript
 document.addEventListener( 'DOMContentLoaded', function() {
@@ -169,7 +169,7 @@ show|Muestra el menú indicado
 hide|Oculta el menú indicado
 toggle|Muestra el menú indicado si estaba oculto o lo oculta si estaba visible
 
-Seria fácil usar los eventos del paquete **swipe** explicados anteriormente para controlar la visualizacion de los distintos menus.
+Seria fácil usar los eventos del paquete [**swipe**](#jsdz---swipe) explicados anteriormente para controlar la visualizacion de los distintos menus.
 
 ```javascript
 document.addEventListener( 'DOMContentLoaded', function() {
