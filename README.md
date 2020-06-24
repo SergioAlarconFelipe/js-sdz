@@ -1,7 +1,12 @@
 # JSDZ
 JavaScript Framework
 
-## Uso
+1. [Instalación](#instalacion)
+2. [JSDZ - Swipe](#jsdz---swipe)
+2. [JSDZ - One Page](#jsdz---one-page)
+2. [JSDZ - Hide Menu](#jsdz---hide-menu)
+
+## Instalación
 Inclusión en el proyecto de forma manual.
 
 ```html
