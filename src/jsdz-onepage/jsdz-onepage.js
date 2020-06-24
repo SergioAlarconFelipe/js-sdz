@@ -2,69 +2,75 @@
 	if( window.jsdz === undefined ) {
 		throw new Error( '\njsdz no se ha defectado.\nPara masinformacion visita: https://github.com/SergioAlarconFelipe/jsdz' );
 	}
-    
-	window.jsdz.pageUpdate = function() {
-		document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
-			if( page.showOnly === undefined ) {
-				page.showOnly = function() {
-					if( !this.classList.contains( 'visible' ) ) {
-						document.querySelectorAll( 'div[ data-role = "page" ]' ).forEach( function( page ) {
-							if( page.classList.contains( 'visible' ) ) {
-								page.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
-								page.classList.remove( 'visible' );
-								page.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
-							}
-						} );
-						this.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
-						this.classList.add( 'visible' );
-						this.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
-					};
+
+	window.jsdz.menuUpdate = function() {
+		document.querySelectorAll( 'div[ data-role = "menu" ]' ).forEach( function( menu ) {
+			if( menu.show === undefined ) {
+				menu.show = function() {
+					this.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
+					this.classList.add( 'visible' );
+					document.querySelectorAll( 'div[ data-link = "#' + this.id + '" ]' ).forEach( function( background ) {
+						background.classList.add( 'visible' );
+					} );
+					this.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
 				};
 			}
 
-			if( page.show === undefined ) {
-				page.show = function() {
-					if( !page.classList.contains( 'visible' ) ) {
-						this.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
-						this.classList.add( 'visible' );
-						this.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
+			if( menu.hide === undefined ) {
+				menu.hide = function() {
+					this.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
+					this.classList.remove( 'visible' );
+					document.querySelectorAll( 'div[ data-link = "#' + this.id + '" ]' ).forEach( function( background ) {
+						background.classList.remove( 'visible' );
+					} );
+					this.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
+				};
+			}
+
+			if( menu.toggle === undefined ) {
+				menu.toggle = function() {
+					if( !this.classList.contains( 'visible' ) ) {
+						this.show();
 					}
-				};
-			}
-
-			if( page.hide === undefined ) {
-				page.hide = function() {
-					if( !this.classList.contains( 'visible' ) ) {
-						if( page.classList.contains( 'visible' ) ) {
-							this.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
-							this.classList.remove( 'visible' );
-							this.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
-						}
-					};
+					else {
+						this.hide();
+					}
 				};
 			}
 		} );
 	};
     
-	function pageLinkClick() {
-		var targets = document.querySelectorAll( this.getAttribute( 'data-target' ) ) || [];
+    function menuLinkClick() {
+        var target = document.getElementById( this.getAttribute( 'data-target' ) ) || null;
+        if( target && target.getAttribute( 'data-role' ) === 'menu' ) {
+            target.show();
+        }
+    }
 
-		targets.forEach( function( target ) {
-			if( target.getAttribute( 'data-role' ) === 'page' ) {
-				target.showOnly();
-			}
-		} );
-	}
-
-	window.jsdz.pageLinkUpdate = function() {
-		document.querySelectorAll( 'span[ data-role = "pageLink" ]' ).forEach( function( link ) {
-			link.removeEventListener( 'click', pageLinkClick );
-			link.addEventListener( 'click', pageLinkClick );
+	window.jsdz.menuLinkUpdate = function() {
+		document.querySelectorAll( 'span[ data-role = "menuLink" ]' ).forEach( function( link ) {
+			link.removeEventListener( 'click', menuLinkClick );
+			link.addEventListener( 'click', menuLinkClick );
 		} );
 	};
 
 	document.addEventListener( 'DOMContentLoaded', function() {
-		window.jsdz.pageUpdate();
-		window.jsdz.pageLinkUpdate();
+		document.querySelectorAll( 'div[ data-role = "menu" ]' ).forEach( function( menu ) {
+			var fondo = document.createElement("div");
+			fondo.setAttribute( 'data-role', 'menuBackground' );
+			fondo.setAttribute( 'data-link', '#' + menu.id );
+
+			menu.parentElement.insertBefore( fondo, menu.parentElement.firstChild );
+
+			document.querySelectorAll( 'div[ data-role = "menuBackground" ]' ).forEach( function( background ) {
+				background.addEventListener( 'click', function() {
+					document.querySelectorAll( this.getAttribute( 'data-link' ) ).forEach( function( menu ) {
+						menu.hide();
+					} );
+				} );
+			} );
+		} );
+
+		window.jsdz.menuLinkUpdate();
 	} );
 } )();
