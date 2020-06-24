@@ -57,10 +57,13 @@
 	};
     
 	function menuLinkClick() {
-		var target = document.getElementById( this.getAttribute( 'data-target' ) ) || null;
-		if( target && target.getAttribute( 'data-role' ) === 'menu' ) {
-			target.show();
-		}
+		var targets = document.getElementById( this.getAttribute( 'data-target' ) ) || [];
+        
+		targets.forEach( function( target ) {
+			if( target.getAttribute( 'data-role' ) === 'menu' ) {
+				target.toggle();
+			}
+		} );
 	}
 
 	window.jsdz.menuLinkUpdate = function() {
