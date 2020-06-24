@@ -128,3 +128,12 @@ document.addEventListener( 'DOMContentLoaded', function() {
 ```
 
 ### JSDZ - Hide Menu
+Con este paquete, podemos gestionar menús laterales que se muestran o se esconden a nuestro gusto, principalmente diseñados para dispositivos móviles.
+
+Sera necesario crear los distintos menus como un div con un atributo **data-role="menu"**.
+
+Estos menus irán intercambiándose la clase **visible** para visualizarse u ocultarse.
+
+Opcionalmente, podemos añadir el attributo **data-position=** con los valores **left** o **right** si queremos seleccionar el lateral de la pantalla por el que se escondera el menu.
+
+> No indicar la posicion funcionara igual que indicar la posicion left.
