@@ -2,7 +2,7 @@
 JavaScript Framework
 
 ## Uso
-Inclusión en el proyecto de forma manual
+Inclusión en el proyecto de forma manual.
 
 ```html
 <script src="js/jsdz-core.js"></script>
@@ -40,6 +40,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
 } );
 ```
 
-### JSDZ - OnePage
+### JSDZ - One Page
 
 ### JSDZ - Hide Menu
