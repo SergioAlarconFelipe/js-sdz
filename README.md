@@ -16,7 +16,7 @@ Inclusión en el proyecto de forma manual.
 <link href="css/jsdz-hidemenu.css" rel="stylesheet" >
 ```
 
-El paquete *jsdz-core.js* es la base obligatoria para que el resto funcionen.
+El paquete **jsdz-core.js** es la base obligatoria para que el resto funcionen.
 
 En caso de que no se incluya antes del resto, se notificara una excepción en la consola de depuración.
 
@@ -24,7 +24,7 @@ El resto de paquetes son opcionales y se pueden incluir los que se necesiten, de
 
 ## Paquetes
 ### JSDZ - Swipe
-Con este paquete, podemos gestionar los eventos *swiperight* y *swipeleft* que se ejecutan cuando el usuario presiona hacia abajo y desliza en la dirección correspondiente (un mínimo de 100px horizontalmente) sobre los nodos del árbol DOM que nos interesen.
+Con este paquete, podemos gestionar los eventos **swiperight** y **swipeleft** que se ejecutan cuando el usuario presiona hacia abajo y desliza en la dirección correspondiente (un mínimo de 100px horizontalmente) sobre los nodos del árbol DOM que nos interesen.
 
 Este paquete está preparado para funcionar tanto en los dispositivos con puntero como en los dispositivos móviles.
 
@@ -43,11 +43,11 @@ document.addEventListener( 'DOMContentLoaded', function() {
 ### JSDZ - One Page
 Con este paquete, podemos gestionar una aplicación "one page" en la que las distintas secciones se irán ocultando o mostrando cuando necesitemos.
 
-Sera necesario crear las distintas páginas como un div con un atributo *data-role="page"*.
+Sera necesario crear las distintas páginas como un div con un atributo **data-role="page"**.
 
-Estas secciones irán intercambiándose la clase *visible* para mantener una activa.
+Estas secciones irán intercambiándose la clase **visible** para mantener una activa.
 
-Opcionalmente, podemos añadir la clase *fade-effect* si queremos activar una animación de plegado al visualizar u ocultar una sección.
+Opcionalmente, podemos añadir la clase **fade-effect** si queremos activar una animación de plegado al visualizar u ocultar una sección.
 
 ```html
 <div id="page-1" data-role="page" class="fade-effect visible">
@@ -68,7 +68,7 @@ Opcionalmente, podemos añadir la clase *fade-effect* si queremos activar una an
 	<p>Page 2</p>
 </div>
 ```
-Automaticamente las etiquetas *span* que posean el atributo *data-role="pageLink"* se vincularan para mostrar las páginas indicadas con su atributo *data-target*.
+Automaticamente las etiquetas **span** que posean el atributo **data-role="pageLink"** se vincularan para mostrar las páginas indicadas con su atributo **data-target**.
 
 Cada página posee los siguientes metodos:
 
