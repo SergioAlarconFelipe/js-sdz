@@ -10,7 +10,7 @@
                 fondo.setAttribute( 'data-role', 'menuBackground' );
                 fondo.setAttribute( 'data-link', '#' + menu.id );
 
-                menu.parentElement.insertBefore( fondo, menu.parentElement.firstChild );
+                menu.parentElement.insertBefore( fondo, menu );
 
                 document.querySelectorAll( 'div[ data-role = "menuBackground" ]' ).forEach( function( background ) {
                     background.addEventListener( 'click', function() {
@@ -57,7 +57,7 @@
 	};
     
 	function menuLinkClick() {
-		var targets = document.getElementById( this.getAttribute( 'data-target' ) ) || [];
+		var targets = document.querySelectorAll( this.getAttribute( 'data-target' ) ) || [];
         
 		targets.forEach( function( target ) {
 			if( target.getAttribute( 'data-role' ) === 'menu' ) {
