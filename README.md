@@ -15,7 +15,8 @@ Inclusión en el proyecto de forma manual
 <link href="css/jsdz-hidemenu.css" rel="stylesheet" >
 ```
 
-El paquete jsdz-core es la base obligatoria para que el resto funcionen.
+El paquete "jsdz-core.js" es la base obligatoria para que el resto funcionen.
+
 En caso de que no se incluya antes del resto, se notificara una excepción en la consola de depuración.
 
 El resto de paquetes son opcionales y se pueden incluir los que se necesiten, de forma automatica se auto combinaran entre ellos.
