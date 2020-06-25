@@ -5,6 +5,8 @@ JavaScript Framework
 2. [JSDZ - Swipe](#jsdz---swipe)
 2. [JSDZ - One Page](#jsdz---one-page)
 2. [JSDZ - Hide Menu](#jsdz---hide-menu)
+2. [JSDZ - Top Menu](#jsdz---top-menu)
+2. [JSDZ - Loadder](#jsdz---loadder)
 
 ## Instalación
 Inclusión en el proyecto de forma manual.
@@ -224,5 +226,9 @@ document.addEventListener( 'DOMContentLoaded', function() {
 ### JSDZ - Top menu
 En desarrollo
 
+[Ir arriba](#jsdz)
+
 ### JSDZ - Loadder
 En desarrollo
+
+[Ir arriba](#jsdz)
