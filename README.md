@@ -180,6 +180,7 @@ Método|Explicación
 show|Muestra el menú indicado
 hide|Oculta el menú indicado
 toggle|Muestra el menú indicado si estaba oculto o lo oculta si estaba visible
+visible|Devuelve **true** si el menu indicado esta visible o **false** en caso contrario
 
 Seria fácil usar los eventos del paquete [**swipe**](#jsdz---swipe) explicados anteriormente para controlar la visualizacion de los distintos menus.
 
