@@ -38,9 +38,9 @@ div[ data-role = "menuBackground" ].visible {
 	display: block;
 }
 div[ data-role = "menu" ].fade-effect {
-	-webkit-transition: left 0.8s ease-in-out;
-	-moz-transition: left 0.8s ease-in-out;
-	transition: left 0.8s ease-in-out;
+	-webkit-transition: left 0.6s ease-in-out;
+	-moz-transition: left 0.6s ease-in-out;
+	transition: left 0.6s ease-in-out;
 }
 span[ data-role = "menuLink" ] {
 	color: #007bff;
