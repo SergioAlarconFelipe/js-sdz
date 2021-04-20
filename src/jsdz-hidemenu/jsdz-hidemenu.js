@@ -53,6 +53,12 @@
 					}
 				};
 			}
+
+			if( menu.visible === undefined ) {
+				menu.visible = function() {
+					return this.classList.contains( 'visible' );
+				}
+			}
 		} );
 	};
 
