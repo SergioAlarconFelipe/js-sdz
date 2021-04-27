@@ -96,20 +96,3 @@
 		} );
 	}
 } )();
-
-/* */
-document.addEventListener( 'DOMContentLoaded', function() {	
-	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'afterShow', function() {
-		console.log( 'afterShow' );
-	} )
-	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'afterHide', function() {
-		console.log( 'afterHide' );
-	} )
-	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'beforeHide', function() {
-		console.log( 'beforeHide' );
-	} )
-	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'beforeShow', function() {
-		console.log( 'beforeShow' );
-	} )
-} );
-/* */
