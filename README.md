@@ -3,10 +3,9 @@ JavaScript Framework
 
 1. [Instalación](#instalación)
 2. [JSDZ - Swipe](#jsdz---swipe)
-2. [JSDZ - One Page](#jsdz---one-page)
-2. [JSDZ - Hide Menu](#jsdz---hide-menu)
-2. [JSDZ - Top Menu](#jsdz---top-menu)
-2. [JSDZ - Loader](#jsdz---loader)
+3. [JSDZ - One Page](#jsdz---one-page)
+4. [JSDZ - Hide Menu](#jsdz---hide-menu)
+5. [JSDZ - Loader](#jsdz---loader)
 
 ## Instalación
 Inclusión en el proyecto de forma manual.
@@ -21,6 +20,9 @@ Inclusión en el proyecto de forma manual.
 
 <script src="js/jsdz-hidemenu.js"></script>
 <link href="css/jsdz-hidemenu.css" rel="stylesheet" >
+
+<script src="js/jsdz-loader.js"></script>
+<link href="css/jsdz-loader.css" rel="stylesheet" >
 ```
 
 El paquete **jsdz-core.js** es la base obligatoria para que el resto funcionen.
@@ -224,12 +226,29 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 [Ir arriba](#jsdz)
 
-### JSDZ - Top menu
-En desarrollo
-
-[Ir arriba](#jsdz)
-
 ### JSDZ - Loader
-En desarrollo
+Con este paquete, podemos gestionar un div que utilizaremos como loader o splashscreen.
+
+Sera necesario el loader como un div con un atributo data-role="loader".
+
+Si queremos que el loader funcione como splascreen al inicio de nuestra aplicacion, debemos indicar el atribuso data-autohide con el valor de los milisegundos tras los que deseamos que se oculte.
+
+> Si no existe el atributo data-autohide, el loader no se mostrara por defecto con el inicio d ela aplicación y podremos forzarlo nosotros cuando nos interese.
+> Un valor de 0 milisegundos mostrara el loader al iniciar la aplicacion y desactivara el auto ocultado obligandonos a hacerlo nosotros mediante JavaScript.
+
+Opcionalmente, podemos añadir la clase fade-effect si queremos activar una animación de desvanecimiento al visualizar u ocultar el loader.
+
+```html
+<div data-role="loader" data-autohide="2500" class="fade-effect"></div>
+```
+
+> Dentro del loader podriamos diseñar cualquier contenido que necesitasemos.
+
+Método|Explicación
+------|-----------
+show|Muestra el loader
+hide|Oculta el loader
+toggle|Muestra el loader si estaba oculto o lo oculta si estaba visible
+visible|Devuelve **true** si el menu indicado esta visible o **false** en caso contrario
 
 [Ir arriba](#jsdz)
