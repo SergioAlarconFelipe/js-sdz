@@ -227,14 +227,14 @@ document.addEventListener( 'DOMContentLoaded', function() {
 [Ir arriba](#jsdz)
 
 ### JSDZ - Loader
-Con este paquete, podemos gestionar un div que utilizaremos como loader o splashscreen.
+Con este paquete, podemos gestionar un contenedor que utilizaremos como loader o splashscreen.
 
-Sera necesario el loader como un div con un atributo data-role="loader".
+Sera necesario crear el loader como un div con un atributo data-role="loader".
 
-Si queremos que el loader funcione como splascreen al inicio de nuestra aplicacion, debemos indicar el atribuso data-autohide con el valor de los milisegundos tras los que deseamos que se oculte.
+Si queremos que el loader funcione como splascreen al inicio de nuestra aplicación, debemos indicar el atributo data-autohide con el valor de los milisegundos tras los que deseamos que se oculte.
 
-> Si no existe el atributo data-autohide, el loader no se mostrara por defecto con el inicio de la aplicación y podremos forzarlo nosotros cuando nos interese.
-> Un valor de 0 milisegundos mostrara el loader al iniciar la aplicacion y desactivara el auto ocultado obligandonos a hacerlo nosotros mediante JavaScript.
+> Si no existe el atributo data-autohide, el loader no se mostrará por defecto con el inicio de la aplicación y podremos forzarlo nosotros cuando nos interese
+> Un valor de 0 milisegundos mostrara el loader al iniciar la aplicación y desactivara el auto ocultado obligándonos a hacerlo nosotros mediante JavaScript
 
 Opcionalmente, podemos añadir la clase fade-effect si queremos activar una animación de desvanecimiento al visualizar u ocultar el loader.
 
@@ -242,7 +242,7 @@ Opcionalmente, podemos añadir la clase fade-effect si queremos activar una anim
 <div data-role="loader" data-autohide="2500" class="fade-effect"></div>
 ```
 
-> Dentro del loader podriamos diseñar cualquier contenido que necesitasemos.
+> Dentro del loader podríamos diseñar cualquier contenido que necesitásemos.
 
 El loader posee los siguientes métodos:
 
