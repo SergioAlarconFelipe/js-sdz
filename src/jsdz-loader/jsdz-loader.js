@@ -68,19 +68,23 @@
 		
 		window.jsdz.loader = loader;
 		
-		loader.show( false );
-		
 		if( loader.dataset.autohide !== undefined ) {
 			var time = parseInt( loader.dataset.autohide );
 			loader.removeAttribute( 'data-autohide' );
 			if( isNaN( time ) ) {
 				time = 2500;
 			}
+			if( time < 250 ) {
+				tiem = 250;
+			}
 			time -= 250;
 			
-			setTimeout( function() {
-				loader.hide( true );
-			}, time );
+			loader.show( false );
+			if( time ) {
+				setTimeout( function() {
+					loader.hide( true );
+				}, time );
+			}
 		}
 	}
 	
