@@ -1,6 +1,6 @@
 ( function() {
 	if( window.jsdz === undefined ) {
-		throw new Error( '\njsdz no se ha defectado.\nPara masinformacion visita: https://github.com/SergioAlarconFelipe/jsdz' );
+		throw new Error( '\njsdz no se ha detectado.\nPara más informacion visita: https://github.com/SergioAlarconFelipe/jsdz' );
 	}
     
 	window.jsdz.pageUpdate = function() {
