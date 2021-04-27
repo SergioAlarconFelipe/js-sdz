@@ -1,0 +1,13 @@
+/* General */
+/* ------------------------------------------- */
+div[ data-role = "loader" ] {
+	position: fixed;
+	height: 100vh;	
+    width: 100vw;
+	
+	transition: opacity .250s ease-out;
+    opacity: 0;
+    overflow: hidden;
+	
+	background-color: white;
+}
