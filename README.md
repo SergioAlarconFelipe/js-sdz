@@ -6,7 +6,7 @@ JavaScript Framework
 2. [JSDZ - One Page](#jsdz---one-page)
 2. [JSDZ - Hide Menu](#jsdz---hide-menu)
 2. [JSDZ - Top Menu](#jsdz---top-menu)
-2. [JSDZ - Loadder](#jsdz---loadder)
+2. [JSDZ - Loader](#jsdz---loader)
 
 ## Instalación
 Inclusión en el proyecto de forma manual.
@@ -229,7 +229,7 @@ En desarrollo
 
 [Ir arriba](#jsdz)
 
-### JSDZ - Loadder
+### JSDZ - Loader
 En desarrollo
 
 [Ir arriba](#jsdz)
