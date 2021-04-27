@@ -233,7 +233,7 @@ Sera necesario el loader como un div con un atributo data-role="loader".
 
 Si queremos que el loader funcione como splascreen al inicio de nuestra aplicacion, debemos indicar el atribuso data-autohide con el valor de los milisegundos tras los que deseamos que se oculte.
 
-> Si no existe el atributo data-autohide, el loader no se mostrara por defecto con el inicio d ela aplicación y podremos forzarlo nosotros cuando nos interese.
+> Si no existe el atributo data-autohide, el loader no se mostrara por defecto con el inicio de la aplicación y podremos forzarlo nosotros cuando nos interese.
 > Un valor de 0 milisegundos mostrara el loader al iniciar la aplicacion y desactivara el auto ocultado obligandonos a hacerlo nosotros mediante JavaScript.
 
 Opcionalmente, podemos añadir la clase fade-effect si queremos activar una animación de desvanecimiento al visualizar u ocultar el loader.
@@ -244,11 +244,39 @@ Opcionalmente, podemos añadir la clase fade-effect si queremos activar una anim
 
 > Dentro del loader podriamos diseñar cualquier contenido que necesitasemos.
 
+El loader posee los siguientes métodos:
+
 Método|Explicación
 ------|-----------
 show|Muestra el loader
 hide|Oculta el loader
 toggle|Muestra el loader si estaba oculto o lo oculta si estaba visible
 visible|Devuelve **true** si el menu indicado esta visible o **false** en caso contrario
+
+El loader ejecuta los siguientes callbacks cuando se muestra o se oculta.
+
+Callback|Explicación
+--------|-----------
+beforeHide|Antes de que el loader se oculte
+afterHide|Despues de que el loader se oculte
+beforeShow|Antes de que el loader se visualice
+afterShow|Despues de que el loader se visualice
+
+```javascript
+document.addEventListener( 'DOMContentLoaded', function() {	
+	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'afterShow', function( event ) {
+		console.log( '1', event );
+	} )
+	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'afterHide', function( event ) {
+		console.log( '2', event );
+	} )
+	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'beforeHide', function( event ) {
+		console.log( '3', event );
+	} )
+	document.querySelector( 'div[ data-role = "loader" ]' ).addEventListener( 'beforeShow', function( event ) {
+		console.log( '4', event );
+	} )
+} );
+```
 
 [Ir arriba](#jsdz)
