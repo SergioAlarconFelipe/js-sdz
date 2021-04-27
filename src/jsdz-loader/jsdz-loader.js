@@ -6,14 +6,14 @@
 	function configLoader() {
 		var loader = document.querySelector( 'div[ data-role = "loader" ]' );
 		
-		loader.visible = false;
+		loader.visibility = false;
 		loader.hide = function( fade ) {
 			if( fade === undefined ) {
 				fade = loader.classList.contains( 'fade-effect' );
 			}
 
 			loader.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
-			loader.visible = false;
+			loader.visibility = false;
 			// loader.classList.remove( 'visible' );
 			loader.style.opacity = 0;
 			if( fade ) {
@@ -38,14 +38,14 @@
 				setTimeout( function() {
 					// loader.classList.add( 'visible' );
 					loader.style.opacity = 1;
-					loader.visible = true;
+					loader.visibility = true;
 					loader.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
 				}, 250 );
 			}
 			else {
 				// loader.classList.add( 'visible' );
 				loader.style.opacity = 1;
-				loader.visible = true;
+				loader.visibility = true;
 				loader.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
 			}
 		}
@@ -54,16 +54,16 @@
 				fade = loader.classList.contains( 'fade-effect' );
 			}
 
-			if( loader.isVisible() ) {
+			if( loader.visible() ) {
 				loader.hide( fade );
 			}
 			else {
 				loader.show( fade );
 			}
 		}
-		loader.isVisible = function() {
+		loader.visible = function() {
 			// return loader.classList.contains( 'visible' );
-			return loader.visible;
+			return loader.visibility;
 		}
 		
 		window.jsdz.loader = loader;
@@ -77,10 +77,10 @@
 			if( time < 250 ) {
 				tiem = 250;
 			}
-			time -= 250;
 			
 			loader.show( false );
 			if( time ) {
+				time -= 250;
 				setTimeout( function() {
 					loader.hide( true );
 				}, time );
