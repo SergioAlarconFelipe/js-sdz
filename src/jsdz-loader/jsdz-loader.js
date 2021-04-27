@@ -9,7 +9,7 @@
 		loader.visible = false;
 		loader.hide = function( fade ) {
 			if( fade === undefined ) {
-				fade = false;
+				fade = loader.classList.contains( 'fade-effect' );
 			}
 
 			loader.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
@@ -29,7 +29,7 @@
 		}
 		loader.show = function( fade ) {
 			if( fade === undefined ) {
-				fade = false;
+				fade = loader.classList.contains( 'fade-effect' );
 			}
 
 			loader.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
@@ -51,7 +51,7 @@
 		}
 		loader.toggle = function( fade ) {
 			if( fade === undefined ) {
-				fade = false;
+				fade = loader.classList.contains( 'fade-effect' );
 			}
 
 			if( loader.isVisible() ) {
