@@ -6,6 +6,7 @@ JavaScript Framework
 3. [JSDZ - One Page](#jsdz---one-page)
 4. [JSDZ - Hide Menu](#jsdz---hide-menu)
 5. [JSDZ - Loader](#jsdz---loader)
+5. [JSDZ - Label-floating](#jsdz---label-floating)
 
 ## Instalación
 Inclusión en el proyecto de forma manual.
@@ -280,3 +281,6 @@ document.addEventListener( 'DOMContentLoaded', function() {
 ```
 
 [Ir arriba](#jsdz)
+
+### JSDZ - Label-floating
+Con este paquete, podemos gestionar formularios cuyos controles de entrada de datos (inputs, selects, textarea, ...) poseen etiquetas flotantes que ayudan a su identificación permitiendo un diseño limpio y ordenado.
