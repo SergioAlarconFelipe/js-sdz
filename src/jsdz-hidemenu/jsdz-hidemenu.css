@@ -26,6 +26,7 @@ div[ data-role = "menu"][ data-position = "left" ].visible {
 }
 div[ data-role = "menu" ][ data-position = "right" ].visible {
 	left: max( 20%, calc( 100% - 17rem ) );
+	z-index: 10001;
 }
 div[ data-role = "menuBackground" ] {
 	display: none;
