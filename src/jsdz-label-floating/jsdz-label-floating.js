@@ -33,6 +33,7 @@
 			node.addEventListener( 'keydown', updateFloatingCallback );
 			node.addEventListener( 'change', updateFloatingCallback );
 			node.addEventListener( 'blur', updateFloatingCallback );
+
 			node.dispatchEvent( new Event( 'change' ) );
 			
 			node.updateFloating = function() {
@@ -85,12 +86,16 @@
 			container.appendChild( label );
 		} );
 	}
+
+	window.jsdz.initFloatingComponents = function() {
+		configNodes();
+	}
 	
 	if( document.readyState !== 'loading' ) {
-		configNodes();
+		window.jsdz.initFloatingComponents();
 	} else {
 		document.addEventListener( 'DOMContentLoaded', function() {	
-			configNodes();
+			window.jsdz.initFloatingComponents();
 		} );
 	}
 } )();
