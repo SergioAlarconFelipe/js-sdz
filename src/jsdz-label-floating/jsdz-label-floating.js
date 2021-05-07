@@ -76,7 +76,9 @@
 		
 		document.querySelectorAll(' \
 			.form-label-floating \
-			input[ type = "range" ]\
+			input[ type = "range" ],\
+			.form-label-floating.input-group \
+			input\
 		').forEach( function( node ) {
 			var label = node.parentElement.querySelector( 'label' );
 			var parent = node.parentNode;

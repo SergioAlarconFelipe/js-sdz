@@ -4,13 +4,17 @@
 	position: relative;
 }
 
-.form-label-floating > .form-control {
+.form-label-floating > .form-control,
+.form-label-floating > div > .form-control {
 	border: none;
 	border-bottom: 1px solid #ced4da;
 	border-radius: 0;
+	
+	z-index: 10;
 }
 
-.form-label-floating > .form-control:focus {
+.form-label-floating > .form-control:focus,
+.form-label-floating > div > .form-control:focus {
 	box-shadow: none;
 }
 
@@ -24,9 +28,13 @@
 	transition: all .1s ease-in-out;
 	padding-top: .8rem;
 	padding-left: .75rem;
+	padding-right: .75rem;
+	
+	z-index: 11;
 }
 
-.form-label-floating > input {
+.form-label-floating > input,
+.form-label-floating > div > input {
 	font-size: .75rem;
 	padding-top: 1.25rem;
 	padding-bottom: .5rem;
@@ -34,12 +42,15 @@
 }
 
 .form-label-floating > input::-webkit-input-placeholder,
-.form-label-floating > input::placeholder {
+.form-label-floating > input::placeholder,
+.form-label-floating > div > input::-webkit-input-placeholder,
+.form-label-floating > div > input::placeholder {
 	color: transparent;
 }
 
 .form-label-floating > input ~ label.floating,
-.form-label-floating > input:focus ~ label {
+.form-label-floating > input:focus ~ label,
+.form-label-floating > div > input:focus ~ label {
 	padding-top: .25rem;
 	font-size: .75rem;
 }
@@ -228,4 +239,41 @@
 
 .form-label-floating > .tom-select > .ts-dropdown .optgroup-header {
 	font-weight: bold;
+}
+
+/* Input group */
+/* ------------------------------------------- */
+.form-label-floating.input-group > .input-group-text,
+.form-label-floating.input-group > .btn {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+.form-label-floating.input-group > div {
+    flex: 1 1 auto;
+}
+
+.form-label-floating.input-group > .input-group-text {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.form-label-floating.input-group > input ~ .input-group-text {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.form-label-floating.input-group > .btn,
+.form-label-floating.input-group > div > .btn {
+    border: none;
+    border-bottom: 1px solid #ced4da;
+}
+
+.form-label-floating.input-group > .btn:focus {
+    box-shadow: none;
+}
+
+.form-label-floating.input-group > .btn:hover {
+	background-color: #e9ecef;
+	color: #212529;
 }
