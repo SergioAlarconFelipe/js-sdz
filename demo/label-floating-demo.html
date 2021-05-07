@@ -1,0 +1,310 @@
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/js/bootstrap.bundle.min.js"></script>
+		
+		<script src="framework/jsdz-core.js"></script>
+		<script src="framework/jsdz-label-floating.js"></script>
+		<link href="framework/jsdz-label-floating.css" rel="stylesheet">
+		
+		<link href="https://cdn.jsdelivr.net/npm/tom-select@1.1/dist/css/tom-select.css" rel="stylesheet">
+		<script src="https://cdn.jsdelivr.net/npm/tom-select@1.1/dist/js/tom-select.complete.js"></script>		
+
+		<style>
+		.row > div {
+			margin-bottom: .75rem;
+		}
+		</style>
+		
+		<script>
+			function initTomSelect() {
+				var select = new TomSelect( '.tom-select', {
+					// plugins: [ 'dropdown_input' ],
+				} );
+			}
+
+			if( document.readyState !== 'loading' ) {
+				initTomSelect();
+			} else {
+				document.addEventListener( 'DOMContentLoaded', function() {	
+					initTomSelect();
+				} );
+			}
+		</script>
+	</head>
+	<body>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col">
+					<h1>Test</h1>
+				</div>
+			</div>
+			
+			<div class="row">
+				<!--
+				<input type="text">
+				<input type="email">
+				<input type="tel">
+				<input type="search">
+				<input type="password">
+				<input type="url">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <input type="search" id="input1" class="form-control">
+                    <label for="input1" class="form-label">Email</label>
+                </div>
+				
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <input type="search" id="input13" class="form-control" value="asdf">
+                    <label for="input13" class="form-label">Email</label>
+                </div>
+				
+				<!--
+				<input type="number">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <input type="number" id="input2" class="form-control">
+                    <label for="input2" class="form-label">Number</label>
+                </div>
+				
+				<!--
+				<input type="date">
+				<input type="time">
+				<input type="datetime-local">
+				<input type="month">
+				<input type="week">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <input type="week" id="input3" class="form-control">
+                    <label for="input3" class="form-label">Date</label>
+                </div>
+				
+				<!--
+				<input type="color">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <input type="color" id="input4" class="form-control">
+                    <label for="input4" class="form-label">Color</label>
+                </div>
+				
+				<!--
+				<input type="file">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <input type="file" id="input5" class="form-control">
+                    <label for="input5" class="form-label">File</label>
+                </div>
+				
+				<!--
+				<input type="range">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<input type="range" id="input6" class="form-control">
+					<label for="input6" class="form-label">Range</label>
+                </div>
+				
+				<!--
+				<input type="checkbox">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<div class="row">
+						<div class="col-12 form-label">
+							Checkbox
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-check col-6">
+							<input class="form-check-input" type="checkbox" value="" id="input7_check1">
+							<label class="form-check-label" for="input7_check1">
+								Check 1
+							</label>
+						</div>
+						<div class="form-check col-6">
+							<input class="form-check-input" type="checkbox" value="" id="input7_check2" checked>
+							<label class="form-check-label" for="input7_check2">
+								Check 2
+							</label>
+						</div>
+					</div>
+                </div>
+				
+				<!--
+				<input type="radio">
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<div class="row">
+						<div class="col-12 form-label">
+							Radios
+						</div>
+					</div>
+					
+					<div class="row">
+						<div class="form-check col-6">
+							<input class="form-check-input" type="radio" value="" name="input8" id="input8_check1">
+							<label class="form-check-label" for="input_check1">
+								Radio 1
+							</label>
+						</div>
+						<div class="form-check col-6">
+							<input class="form-check-input" type="radio" value="" name="input8" id="input8_check2" checked>
+							<label class="form-check-label" for="input8_check2">
+								Radio 2
+							</label>
+						</div>
+					</div>
+                </div>
+
+				<!--
+				<textarea></textarea>
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<textarea class="form-control form-auto-grow" id="input9"></textarea>
+					<label for="input9" class="form-label">Textarea</label>
+				</div>
+				
+				<!--
+				<select></select>
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<select class="form-control" id="input10">
+						<optgroup label="Group 1">
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3" selected>Option 3</option>
+						</optgroup>
+						<optgroup label="Group 2">
+							<option value="4">Option 4</option>
+							<option value="5">Option 5</option>
+						</optgroup>
+					</select>
+					<label for="input10" class="form-label">Select</label>
+				</div>
+				
+				<!--
+				<select></select>
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<select class="form-control" id="input12" multiple>
+						<optgroup label="Group 1">
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3" selected>Option 3</option>
+						</optgroup>
+						<optgroup label="Group 2">
+							<option value="4">Option 4</option>
+							<option value="5">Option 5</option>
+						</optgroup>
+					</select>
+					<label for="input12" class="form-label">Select</label>
+				</div>
+				
+				<!--
+				TomSelect
+				<select></select>
+				-->
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+					<select class="form-control tom-select" id="input11">
+						<optgroup label="Group 1">
+							<option value="1">Option 1</option>
+							<option value="2">Option 2</option>
+							<option value="3" selected>Option 3</option>
+						</optgroup>
+						<optgroup label="Group 2">
+							<option value="4">Option 4</option>
+							<option value="5">Option 5</option>
+						</optgroup>
+					</select>
+					<label for="input11" class="form-label">Select</label>
+				</div>
+				
+				<!-- 
+				<input type="button">
+				<input type="reset">
+				<input type="submit">
+				<input type="image">
+				-->
+				
+				<!--
+                <div class="col-12 col-sm-6 col-md-6 col-lg-4 col-xl-4 form-label-floating">
+                    <select id="input2" class="form-control">
+						<option>a</option>
+						<option>b</option>
+						<option>c</option>
+					</select>
+                    <label for="input2">Email</label>
+                </div>
+				
+                <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4 form-label-floating">
+                    <select id="input3" class="form-control" multiple="multiple">
+						<option>aaaaaa</option>
+						<option>bbbbbb</option>
+						<option>cccccc</option>
+						<option>dddddd</option>
+						<option>eeeeee</option>
+						<option>ffffff</option>
+						<option>gggggg</option>
+					</select>
+                    <label for="input3">Email</label>
+                </div>
+				-->
+			</div>
+			
+			<div class="row">
+				<!-- input group button -->
+                <div class="col-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 form-label-floating">
+                    <input type="search" id="input14" class="form-control">
+                    <label for="input14" class="form-label">Email</label>
+                </div>
+				
+				<div class="input-group form-label-floating">
+					<span class="input-group-text" id="input15">X</span>
+					<input type="text" class="form-control">
+					<label for="input15" class="form-label">Email</label>
+				</div>
+				
+				<div class="input-group form-label-floating">
+					<span class="input-group-text" id="input16">X</span>
+					<input type="text" class="form-control">
+					<label for="input16" class="form-label">Email</label>
+				</div>
+				
+				<div class="input-group form-label-floating">
+					<input type="text" class="form-control" id="input17">
+                    <label for="input17" class="form-label">Email</label>
+					<span class="input-group-text">X</span>
+				</div>
+				
+				<div class="input-group form-label-floating">
+					<input type="text" class="form-control" id="input18">
+                    <label for="input18" class="form-label">Email</label>
+					<span class="input-group-text">X</span>
+					<span class="input-group-text">X</span>
+				</div>
+				
+				<div class="input-group form-label-floating">
+					<input type="text" class="form-control" id="input19">
+                    <label for="input19" class="form-label">Email</label>
+					<button class="btn btn-light">X</button>
+				</div>
+				
+				<div class="input-group form-label-floating">
+					<button class="btn btn-light">X</button>
+					<input type="text" class="form-control" id="input20">
+					<label for="input20" class="form-label">Email</label>
+				</div>
+				
+				<div class="input-group form-label-floating">
+					<button class="btn btn-light">X</button>
+					<button class="btn btn-light">X</button>
+					<input type="text" class="form-control" id="input21">
+					<label for="input21" class="form-label">Email</label>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
