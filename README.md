@@ -17,13 +17,16 @@ Inclusión en el proyecto de forma manual.
 <script src="js/jsdz-swipe.js"></script>
 
 <script src="js/jsdz-onepage.js"></script>
-<link href="css/jsdz-onepage.css" rel="stylesheet" >
+<link href="css/jsdz-onepage.css" rel="stylesheet">
 
 <script src="js/jsdz-hidemenu.js"></script>
-<link href="css/jsdz-hidemenu.css" rel="stylesheet" >
+<link href="css/jsdz-hidemenu.css" rel="stylesheet">
 
 <script src="js/jsdz-loader.js"></script>
-<link href="css/jsdz-loader.css" rel="stylesheet" >
+<link href="css/jsdz-loader.css" rel="stylesheet">
+
+<script src="js/jsdz-label-floating.js"></script>
+<link href="css/jsdz-label-floating.css" rel="stylesheet">
 ```
 
 El paquete **jsdz-core.js** es la base obligatoria para que el resto funcionen.
