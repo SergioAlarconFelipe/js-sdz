@@ -36,6 +36,14 @@
 .form-label-floating > input,
 .form-label-floating > div > input {
 	font-size: .75rem;
+	padding-top: .5rem;
+	padding-bottom: .5rem;
+	padding-left: .75rem;
+}
+
+.form-label-floating > label ~ input,
+.form-label-floating > div > label ~ input {
+	font-size: .75rem;
 	padding-top: 1.25rem;
 	padding-bottom: .5rem;
 	padding-left: .75rem;
