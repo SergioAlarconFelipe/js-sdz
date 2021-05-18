@@ -49,10 +49,10 @@
 	padding-left: .75rem;
 }
 
-.form-label-floating > input::-webkit-input-placeholder,
-.form-label-floating > input::placeholder,
-.form-label-floating > div > input::-webkit-input-placeholder,
-.form-label-floating > div > input::placeholder {
+.form-label-floating > input:not(.withoutLabel)::-webkit-input-placeholder,
+.form-label-floating > input:not(.withoutLabel)::placeholder,
+.form-label-floating > div > input:not(.withoutLabel)::-webkit-input-placeholder,
+.form-label-floating > div > input:not(.withoutLabel)::placeholder {
 	color: transparent;
 }
 

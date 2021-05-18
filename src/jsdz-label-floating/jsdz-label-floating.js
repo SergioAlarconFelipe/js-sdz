@@ -10,14 +10,16 @@
 			}
 			
 			var label = this.parentElement.querySelector( 'label' );
-			if( this.value === '' || this.value === null || this.value.length === 0 ) {
-				if( label.classList.contains( 'floating' ) ) {
-					label.classList.remove( 'floating' );
+			if( label ) {
+				if( this.value === '' || this.value === null || this.value.length === 0 ) {
+					if( label.classList.contains( 'floating' ) ) {
+						label.classList.remove( 'floating' );
+					}
 				}
-			}
-			else {
-				if( !label.classList.contains( 'floating' ) ) {
-					label.classList.add( 'floating' );
+				else {
+					if( !label.classList.contains( 'floating' ) ) {
+						label.classList.add( 'floating' );
+					}
 				}
 			}
 		}
