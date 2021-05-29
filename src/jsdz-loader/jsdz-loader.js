@@ -7,47 +7,54 @@
 		var loader = document.querySelector( 'div[ data-role = "loader" ]' );
 		
 		loader.visibility = false;
-		loader.hide = function( fade ) {
-			if( fade === undefined ) {
-				fade = loader.classList.contains( 'fade-effect' );
-			}
+		loader.style.opacity = 0;
+		loader.style.display = 'none';
+		
+		loader.hide = function( opt ) {
+			opt = opt || {};
+			opt.time = opt.time || 0;
+			opt.fade = opt.fade || loader.classList.contains( 'fade-effect' );
 
-			loader.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
-			loader.visibility = false;
-			// loader.classList.remove( 'visible' );
-			loader.style.opacity = 0;
-			if( fade ) {
-				setTimeout( function() {
+			setTimeout( function() {
+				loader.dispatchEvent( window.jsdz.customEvent( 'beforeHide' ) );
+				loader.visibility = false;
+				// loader.classList.remove( 'visible' );
+				loader.style.opacity = 0;
+				if( opt.fade ) {
+					setTimeout( function() {
+						loader.style.display = 'none';
+						loader.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
+					}, 250 );
+				}
+				else {
 					loader.style.display = 'none';
 					loader.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
-				}, 250 );
-			}
-			else {
-				loader.style.display = 'none';
-				loader.dispatchEvent( window.jsdz.customEvent( 'afterHide' ) );
-			}
+				}
+			}, opt.time );
 		}
-		loader.show = function( fade ) {
-			if( fade === undefined ) {
-				fade = loader.classList.contains( 'fade-effect' );
-			}
-
-			loader.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
-			loader.style.display = 'block';
-			if( fade ) {
-				setTimeout( function() {
+		loader.show = function( opt ) {
+			opt = opt || {};
+			opt.time = opt.time || 0;
+			opt.fade = opt.fade !== undefined ? opt.fade : loader.classList.contains( 'fade-effect' );
+			
+			setTimeout( function() {
+				loader.dispatchEvent( window.jsdz.customEvent( 'beforeShow' ) );
+				loader.style.display = 'block';
+				if( opt.fade ) {
+					setTimeout( function() {
+						// loader.classList.add( 'visible' );
+						loader.style.opacity = 1;
+						loader.visibility = true;
+						loader.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
+					}, 250 );
+				}
+				else {
 					// loader.classList.add( 'visible' );
 					loader.style.opacity = 1;
 					loader.visibility = true;
 					loader.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
-				}, 250 );
-			}
-			else {
-				// loader.classList.add( 'visible' );
-				loader.style.opacity = 1;
-				loader.visibility = true;
-				loader.dispatchEvent( window.jsdz.customEvent( 'afterShow' ) );
-			}
+				}
+			}, opt.time );
 		}
 		loader.toggle = function( fade ) {
 			if( fade === undefined ) {
