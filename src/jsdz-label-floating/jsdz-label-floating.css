@@ -2,6 +2,8 @@
 /* ------------------------------------------- */
 .form-label-floating {
 	position: relative;
+	
+	/* z-index: 8; */
 }
 
 .form-label-floating > .form-control,
