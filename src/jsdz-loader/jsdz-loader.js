@@ -85,12 +85,10 @@
 				tiem = 250;
 			}
 			
-			loader.show( false );
+			loader.show( { fade: false } );
 			if( time ) {
 				time -= 250;
-				setTimeout( function() {
-					loader.hide( true );
-				}, time );
+				loader.hide( { time: time, } );
 			}
 		}
 	}
