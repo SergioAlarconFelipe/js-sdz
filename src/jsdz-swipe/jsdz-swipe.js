@@ -11,7 +11,8 @@
 	element.addEventListener( 'mousemove', move, false );
 	element.addEventListener( 'mouseup', end, false );
 
-	var pxSensibility = 100;
+	var pxSensibilityX = 100;
+	var pxSensibilityY = 50;
 	var touching = false;
 	var direction = 'none';
 	var touchX = false;
@@ -20,14 +21,17 @@
 	function start( event ) {
 		if( event.changedTouches !== undefined ) {
 		    event.x = event.changedTouches[ 0 ].clientX;
+		    event.y = event.changedTouches[ 0 ].clientY;
 		}
 
 		touching = true;
 		touchX = event.x;
+		touchY = event.y;
 	}
 	function end( event ) {
 		if( event.changedTouches !== undefined ) {
 		    event.x = event.changedTouches[ 0 ].clientX;
+		    event.y = event.changedTouches[ 0 ].clientY;
 		}
 
 		touching = false;
@@ -37,6 +41,7 @@
 		if( touching ) {
 		    if( event.changedTouches !== undefined ) {
 				event.x = event.changedTouches[ 0 ].clientX;
+				event.y = event.changedTouches[ 0 ].clientY;
 		    }
 
 			if( direction === 'none' ) {
@@ -56,13 +61,22 @@
 				touching = false;
 				direction = 'none';
 			}
+			
+			if( event.y < touchY - pxSensibilityY ) {
+				touching = false;
+				direction = 'none';
+			}
+			else if( event.y > touchY + pxSensibilityY ) {
+				touching = false;
+				direction = 'none';
+			}
 
-			if( event.x >= touchX + pxSensibility ) {
+			if( event.x >= touchX + pxSensibilityX ) {
 				touching = false;
 				direction = 'none';
 				event.srcElement.dispatchEvent( window.jsdz.customEvent( 'swiperight' ) );
 			}
-			else if( event.x <= touchX - pxSensibility ) {
+			else if( event.x <= touchX - pxSensibilityX ) {
 				touching = false;
 				direction = 'none';
 				event.srcElement.dispatchEvent( window.jsdz.customEvent( 'swipeleft' ) );
