@@ -82,7 +82,7 @@
 				time = 2500;
 			}
 			if( time < 250 ) {
-				tiem = 250;
+				time = 250;
 			}
 			
 			loader.show( { fade: false } );
@@ -95,7 +95,8 @@
 	
 	if( document.readyState !== 'loading' ) {
 		configLoader();
-	} else {
+	}
+	else {
 		document.addEventListener( 'DOMContentLoaded', function() {	
 			configLoader();
 		} );
