@@ -287,3 +287,13 @@ document.addEventListener( 'DOMContentLoaded', function() {
 
 ### JSDZ - Label-floating
 Con este paquete, podemos gestionar formularios cuyos controles de entrada de datos (inputs, selects, textarea, ...) poseen etiquetas flotantes que ayudan a su identificación permitiendo un diseño limpio y ordenado.
+
+Sera necesario poser cada input dentro de un div con la clase "form-label-floating".
+En caso de que nos interese, podemos acompañar el input con un titulo que debe indicarse en el html tras el input.
+
+```javascript
+<div class="form-label-floating">
+	<input id="id" type="text" />
+	<label for="id">Campo</label>
+</div>
+```
