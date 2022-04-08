@@ -41,6 +41,16 @@
 	padding-top: 1.25rem;
 	padding-bottom: .5rem;
 	padding-left: .75rem;
+	
+	border-top: none;
+	border-left: none;
+	border-right: none;
+    border-bottom: 1px solid #495057;
+}
+
+.form-label-floating > input:focus-visible,
+.form-label-floating > div > input:focus-visible {
+	outline: none;
 }
 
 .form-label-floating > input.withoutLabel,
