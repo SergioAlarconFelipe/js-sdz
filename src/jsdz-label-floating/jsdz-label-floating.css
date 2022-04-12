@@ -197,9 +197,19 @@
 /* ------------------------------------------- */
 .form-label-floating > textarea {
 	font-size: .75rem;
-	padding-top: 0rem;
-	padding-bottom: .5rem;
-	margin-top: 1.25rem;
+    padding-top: 1.25rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #495057;
+    width: 100%;
+}
+
+.form-label-floating > textarea:focus-visible {
+	outline: none;
 }
 
 .form-label-floating > textarea::-webkit-input-placeholder,
