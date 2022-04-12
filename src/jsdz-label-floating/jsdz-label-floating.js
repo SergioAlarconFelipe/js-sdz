@@ -43,10 +43,20 @@
 			}
 
 			if( node.type === 'textarea' && node.classList.contains( 'form-auto-grow' ) ) {
-				const offset = node.offsetHeight - node.clientHeight;
+				// let offset = node.offsetHeight - node.clientHeight;
+				const paddings = 20 + 8 + 1; // top: 20, bottom: 8, extra: 1
+
+				function setHeight( node ) {
+					const lines = node.value.split( /\r|\r\n|\n/ ).length;
+					const offset = 18 * lines;
+					node.style.height = 'auto';
+					// event.target.style.height = event.target.scrollHeight + offset + 'px';
+					node.style.height = paddings + offset + 'px';
+				}
+
+				setHeight( node );
 				node.addEventListener( 'input', function( event ) {
-					event.target.style.height = 'auto';
-					event.target.style.height = event.target.scrollHeight + offset + 'px';
+					setHeight( node );
 				} );
 			}
 		} );
